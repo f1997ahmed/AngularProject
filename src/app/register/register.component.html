@@ -9,8 +9,8 @@
                 </div>
                <!--  (ngSubmit)="onFormSubmit(registerForm.value)"  -->
                <!-- [formGroup]="registerForm" --> 
-             <!--  <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)"> -->
-                <div class="form-content" [formGroup]="registerForm"  (ngSubmit)="onFormSubmit(registerForm.value)"  > 
+            <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)"> 
+              <!--   <div class="form-content" [formGroup]="registerForm"  (ngSubmit)="onFormSubmit(registerForm.value)"  >  -->
                             <div class="form-group">
                                 <label>User Name</label>
                                 <input formControlName="Name"  type="text" class="form-control" placeholder="Your Name *" value=""/>
@@ -35,6 +35,6 @@
                                 </div> 
                             </div>
                     <button type="submit" class="btnSubmit">Registration</button>
-                </div>
-              <!-- </form>-->
+          <!--       </div> -->
+               </form>
             </div>
