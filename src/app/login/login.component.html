@@ -2,20 +2,27 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<div class="container register-form">
+<!--<div class="container register-form">
     <div class="form">
         <div class="note">
             <p>Login Form</p>
         </div>
-     <!--   <form [formGroup]="LoginForm" (ngSubmit)="login(LoginForm.value)">-->
-              <div class="form-content" [formGroup]="LoginForm"  (ngSubmit)="login(LoginForm.value)"  >
-            <div class="form-group">
+  <form [formGroup]="LoginForm" (ngSubmit)="login(LoginForm.value)">-->
+        <!--<div class="form-content" [formGroup]="LoginForm"  (ngSubmit)="login(LoginForm.value)">-->
+            <!--<div class="form-group">
                 <label>User Name</label>
                 <input formControlName="Name" type="text" class="form-control" placeholder="Your Name *" value="" />
                  <div *ngIf="Name.invalid && Name.touched">
-                                    <small class="text-danger" *ngIf="Name.errors.required">User Name is required</small>
-                                </div> 
-            </div>
+                  <small class="text-danger" *ngIf="Name.errors.required">User Name is required</small>
+               </div> -->
+            <!--<div class="form-group">
+                <label>User Name</label>
+                <input formControlName="Name"  type="text" class="form-control" placeholder="Your Name *" value=""/>-->
+                <!--<div *ngIf="Name.invalid && Name.touched">
+                    <small class="text-danger" *ngIf="Name.errors.required">User Name is required</small>
+                </div>-->
+            <!--</div>
+         
             <div class="form-group">
                 <label>Password</label>
                 <input formControlName="password" type="text" class="form-control" placeholder="Your Password *" value="" />
@@ -23,16 +30,54 @@
                     <small class="text-danger" *ngIf="password.errors.required">Password is required</small>
                 </div>
             </div>
-
             <div>
                 <p style="color:#E92626;font-size:20px;font-weight:normal" Class="success">
                     {{errorMessage}}
                 </p>
             </div>
-
             <button type="submit" class="btnSubmit">Login</button>
         </div>
-       <!-- </form>-->
+        </form>
+    </div>
+</div>-->
+<!-- <app-dashboard></app-dashboard> -->
+
+
+
+
+
+<div class="cart-box-main">
+    <div class="container">
+<div class="col-sm-6 col-lg-6 mb-3">
+    <div class="title-left">
+        <h3>Account Login</h3>
+    </div>
+    <div class="form-content" [formGroup]="LoginForm"  (ngSubmit)="login(LoginForm.value)">
+     <div class="form-group">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="InputName" class="mb-0">User Name</label>
+                <input type="Name" formControlName="Name" class="form-control" id="InputName" placeholder="Enter Name" value="">
+                <div *ngIf="Name.invalid && Name.touched">
+                    <small class="text-danger" *ngIf="Name.errors.required">User Name is required</small>
+                 </div>
+             </div>
+            <div class="form-group col-md-6">
+                <label for="InputPassword" class="mb-0">Password</label>
+                <input type="password" formControlName="password"  class="form-control" id="InputPassword" placeholder="Password" value="">
+                <div *ngIf="password.invalid && password.touched">
+                    <small class="text-danger" *ngIf="password.errors.required">Password is required</small>
+                </div> 
+            </div>
+            <div>
+                <p style="color:#E92626;font-size:20px;font-weight:normal" Class="success">
+                    {{errorMessage}}
+                </p>
+            </div>
+        </div>
+        <button type="submit" class="btn hvr-hover">Login</button>
+    </div>
     </div>
 </div>
-<!-- <app-dashboard></app-dashboard> -->
+</div>
+</div>

@@ -1,0 +1,241 @@
+<!--<header class="bg-dark text-center text-white">
+
+  <div class="container p-4">
+   
+    
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+ 
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+  
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+   
+    <section class="">
+    
+      <div class="raw">
+       
+        <div class="navbar navbar-expand-sm bg-black ">
+        
+
+          <ul class=" navbar-nav">
+            <li >
+              <img src="/assets/3.jpg"/>
+            </li>
+            <li>
+              <a  routerLink="home" class="text-white">Home</a>
+            </li>
+            <li>
+              <a routerLink="products" class="text-white">ShowProduct</a>
+            </li>
+            <li>
+              <a  routerLink="newproduct"  class="text-white">newProduct</a>
+            </li>
+            <li>
+              <a  routerLink="productDetails"  class="text-white">ProductDetails</a>
+            </li>
+            <li>
+              <a  routerLink="Register" class="text-white">Register</a>
+            </li>
+            <li>
+              <a  routerLink="Login"  class="text-white">Login</a>
+            </li>
+            <li>
+              <div class="col-md-6 text-right">
+               <div class="cart_icon" routerLink="/cart"><i class="fa fa-shopping-cart"></i>
+                 <div class="cart_value">
+                  {{cartItem}}
+                  </div>
+                 </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</header>
+div 
+class="col-md-6 text-right">
+ <div class="cart_icon" 
+routerLink="/cart">
+<i class="fa fa-shopping-cart">
+</i>
+     <div class="cart_value">
+              {{cartItem}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>-->
+<!-- Start Slider -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <!-- Start Main Top -->
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="custom-select-box">
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+							<option>¥ JPY</option>
+							<option>$ USD</option>
+							<option>€ EUR</option>
+						</select>
+                    </div>
+                    <div class="right-phone-box">
+                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
+                    </div>
+                    <div class="our-link">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
+                            <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
+                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="login-box" >
+					<!--<select id="basic" class="selectpicker show-tick form-control" >
+							<option>-->
+                <a  routerLink="Login" class="nav-link" >Login</a>
+                <a  routerLink="/Register" class="nav-link">Sign In</a>
+                <li><a routerLink="/home"  *ngIf="!logFlag" (click)="LogOut()">Logout</a></li>
+            
+					  </div>
+                <div class="text-slid-box">
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+  
+    <!-- End Main Top -->
+
+    <!-- Start Main Top -->
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                    <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" routerLink="home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" routerLink="products">Products</a></li>
+                        <li class="nav-item"><a class="nav-link"  routerLink="newproduct">newProducts</a></li>
+								        <li  class="nav-item"><a routerLink="productDetails">Product Detail</a></li>
+                        <li class="nav-item"><a class="nav-link" routerLink="Categorys">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link"  routerLink="AddCategory" >newCategory</a></li>
+								        <li  class="nav-item"><a routerLink="CategorysUPdate" >editCategory</a></li>
+                        <li  class="nav-item"><a href="cart.html">Edit Product</a></li>-->
+                            
+                        <!--<li><a href="checkout.html">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link"  routerLink="newproduct" >newProducts</a></li>-->
+                        
+                      <li class="nav-item"><a class="nav-link" routerLink="productDetails" >Contact Us</a></li>
+                    </ul>
+                    
+                    <div class="attr-nav">
+                      <ul>
+                           <li class="side-menu"> 
+                                         <a  routerLink="/cart"> {{cartItem}}
+                                           <i class="fa fa-shopping-cart"></i><p>My Cart</p></a>
+                          </li>
+                          <li class="search"><a href="#"><i class="fa fa-search"></i></a>
+                          </li>
+                        <li>         
+                                    <a  routerLink="/wish"> <i class="far fa-heart"></i>
+                                       </a>
+                          </li>
+                      </ul>
+                  </div>
+                </div>
+
+               
+              
+            </div>
+           
+      </nav>
+
+  </header>
+ 
+  
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="assets/js/jquery.superslides.min.js"></script>
+    <script src="assets/js/bootstrap-select.js"></script>
+    <script src="assets/js/inewsticker.js"></script>
+    <script src="assets/js/bootsnav.js."></script>
+    <script src="assets/js/images-loded.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/baguetteBox.min.js"></script>
+    <script src="assets/js/form-validator.min.js"></script>
+    <script src="assets/js/contact-form-script.js"></script>
+    <script src="assets/js/custom.js"></script>

@@ -1,0 +1,54 @@
+
+<!--<div style="text-align: center; height: 500px;">
+    <div class="row">
+      <div class="col-4" >
+        <div class="card-body">-->
+          <!--<img [src]="product.Image" class="card-subtitle md-2 ">-->
+        <!--<h2 class="card-title"><img [src]="/assets/product.Image"></h2>-->
+         <!-- <h6 class="card-subtitle md-2 text-muted">{{product.Name}}</h6>
+          <h6 class="card-subtitle md-2 text-muted">${{product.Price}}</h6>
+          <a class="btn btn-primary">Add To Cart</a>
+        </div>
+      </div>
+      </div>
+</div>-->
+<div class='card'
+     *ngIf='product'>
+  <div class='card-header'>
+    {{pageTitle + ': ' + product.Name}}
+  </div>
+<div class='card-body'>
+    <div class='row'>
+      <div class='col-md-8'>
+        <div class='row'>
+          <div class='col-md-4'>Name:</div>
+          <div class='col-md-8'>{{product.Name}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Description:</div>
+          <div class='col-md-8'>{{product.Description}}</div>
+        </div>
+        <div class='row'>
+            <div class='col-md-4'>Price:</div>
+            <div class='col-md-8'>{{product.Price|currency:'USD':'symbol'}}
+
+            </div>
+          </div>
+        </div>  <div class='col-md-4'>
+            <img class='center-block img-responsive'
+                 [style.width.px]='200'
+                 [style.margin.px]='2'
+                 [src]='product.Image'
+                 [title]='product.Name'>
+          </div>
+        </div>
+      </div>
+    
+      <div class='card-footer'>
+        <button class='btn btn-outline-secondary'
+                (click)='onBack()'
+                style='width:80px'>
+          <i class='fa fa-chevron-left'></i> Back
+        </button>
+      </div>
+    </div>

@@ -1,0 +1,184 @@
+<!--<section class="cart_section">
+    <div class="container">
+    <h2>Cart</h2>
+    <div *ngIf="itemCart">
+    <table>
+    <tr>
+    <th>Image</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Sub Total</th>
+    <th>Remove Item</th>
+    </tr>
+    <tr *ngFor="let item 
+    of itemCart">
+    <td><img src="assets/{{item.Image}}" alt="P1"></td>
+    <td>${{item.Price}}</td>
+    <td>
+    <div class="content">
+    <button type="button" class="btn" (click)="incrementQuantity(item.Id, item.Quantity)">
+    <i class="fa fa-plus"></i>
+    </button>
+    <span>{{item.Quantity}}
+    </span>
+    <button type="button" class="btn" (click)="decreaseQuantity(item.Id,item.Quantity)">
+    <i class="fa fa-minus"></i>
+    </button>
+    </div>
+    </td>
+    <td>
+    $ {{item.Quantity 
+    * item.Price | number}}
+    </td>
+    <td><button type="button" class="delete" (click)="singleDelete(item.Id)">
+    <i class="fa fa-trash"></i>
+    </button></td>
+    </tr>
+    </table>
+    <div class="row">
+      <div class="col-md-6">
+      <h3>Total - ${{total}}
+      </h3>
+      <div class="col-md-2 text-center">
+        <button type="button" class="removeall" >Buy</button>
+        </div>
+     </div>
+      <div class="col-md-6 text-right">
+       <button type="button" class="removeall" (click)="removeall()">
+       <i class="fa fa-trash"></i> 
+       Remove All Item</button>
+       </div>
+    </div>
+    </div>
+    </div>
+    </section>-->
+    <div class="all-title-box">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <h2>Cart</h2>
+                  <ul class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                      <li class="breadcrumb-item active">Cart</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="cart-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" *ngIf="itemCart">
+                <div class="table-main table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Images</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of itemCart">
+                              <td class="thumbnail-img">
+                               <a href="#">
+                               <img class="img-fluid" src="assets/{{item.Image}}" alt="" />
+                              </a>
+                            </td>
+                            <td class="name-pr">
+                                <a href="#">
+                               {{item.Name}}
+                               </a>
+                            </td>
+                            <td class="price-pr">
+                                <p>${{item.Price}}</p>
+                            </td>
+                            <td class="quantity-box">
+                              <div class="content">
+                                <button type="button" class="btn" (click)="incrementQuantity(item.Id, item.Quantity)">
+                                <i class="fa fa-plus"></i>
+                                </button>
+                                <span>{{item.Quantity}}
+                                </span>
+                                <button type="button" class="btn" (click)="decreaseQuantity(item.Id,item.Quantity)">
+                                <i class="fa fa-minus"></i>
+                                </button>
+                                </div>
+                                    <!--<input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text">
+                              -->
+                            </td>
+                            <td class="total-pr">
+                                <p>$  $ {{item.Quantity 
+                                  * item.Price | number}}</p>
+                            </td>
+                            <td class="remove-pr">
+                              <button type="button" class="delete" (click)="singleDelete(item.Id)">
+                                <i class="fa fa-trash"></i>
+                                </button>
+                                <!--<a href="#">
+                                  <i class="fas fa-times"></i>
+                               </a>-->
+                            </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col-md-6">
+                        <h3>Total - ${{total}}
+                        </h3>
+                       </div>
+                    <div class="col-md-6 text-right">
+                        <button type="button" class="removeall" (click)="removeall()">
+                        <i class="fa fa-trash"></i> 
+                        Remove All Item</button>
+                     </div>
+                </div>
+            </div>
+        </div>
+            <div class="col-lg-6 col-sm-6">
+                          <div class="update-box">
+                              <input value="Update Cart" type="submit">
+                          </div>
+                      </div>
+                  </div>
+      
+                  <div class="row my-5">
+                      <div class="col-lg-8 col-sm-12"></div>
+                      <div class="col-lg-4 col-sm-12">
+                          <div class="order-box">
+                              <h3>Order summary</h3>
+                              <div class="d-flex">
+                                  <h4>Sub Total</h4>
+                                  <div class="ml-auto font-weight-bold">  $65
+                                </div>
+                              </div>
+                              <div class="d-flex">
+                                  <h4>Discount</h4>
+                                  <div class="ml-auto font-weight-bold"> $ 40 </div>
+                              </div>
+                              <hr class="my-1">
+                              <div class="d-flex">
+                                  <h4>Coupon Discount</h4>
+                                  <div class="ml-auto font-weight-bold"> $ 10 </div>
+                              </div>
+                              <div class="d-flex">
+                                  <h4>Tax</h4>
+                                  <div class="ml-auto font-weight-bold"> $ 2 </div>
+                              </div>
+                              <div class="d-flex">
+                                  <h4>Shipping Cost</h4>
+                                  <div class="ml-auto font-weight-bold"> Free </div>
+                              </div>
+                              <hr>
+                              <div class="d-flex gr-total">
+                                  <h5>Grand Total</h5>
+                                  <div class="ml-auto h5"> ${{total}} </div>
+                              </div>
+                              <hr> </div>
+                      </div>
+                      <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
+                  </div>
+    

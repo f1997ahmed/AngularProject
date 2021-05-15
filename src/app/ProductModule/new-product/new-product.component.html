@@ -1,0 +1,182 @@
+<div class="cart-box-main">
+  <div class="container">
+     <div class="row new-account-login">
+        <div class="col-sm-6 col-lg-6 mb-3">
+             <div class="title-left">
+                  <h3>Add New Product</h3>
+             </div>
+      <form [formGroup]="ProductForm"(ngSubmit)="onFormSubmit()">  
+      <div class="form-group"> 
+          <div class="form-group col-md-8">
+             <label for="ID" class="mb-0">ID</label> 
+             <input type="Number" formControlName="Id" placeholder="Enter Id"  class="form-control" [ngClass]="{ 'is-invalid': dataSaved &&ProductForm.Id.errors }">   
+          <div>  
+            <span *ngIf="!ProductForm.get('Id').value && ProductForm.get('Id').touched"></span>  
+           </div>  
+          </div> 
+          <div class="form-group col-md-8"> 
+            <label for="Name" class="mb-0"> Product Name</label> 
+              <input formControlName="Name"  placeholder="Item Name" class="form-control" [ngClass]="{ 'is-invalid': dataSaved &&ProductForm.Name.errors }" >  
+              <div *ngIf="ProductForm.Name.invalid && ProductForm.Name.touched">  
+                <span *ngIf="ProductForm.get('Name').value &&ProductForm.get('Name').touched">Product Name is required</span>  
+              </div>  
+                  <div *ngIf="ProductForm.Name.invalid && ProductForm.Name.touched">
+                    <small class="text-danger" *ngIf="ProductForm.Name.errors.required">Product Name is required</small>
+                  </div>
+            </div>
+            <div class="form-group col-md-8"> 
+                 <label for="Price" class="mb-0"> Price</label> 
+                    <input type="number" formControlName="Price" placeholder="Price" class="form-control" [ngClass]="{ 'is-invalid': dataSaved &&ProductForm.Price.errors }">   
+                  <div>  
+                    <span *ngIf="!ProductForm.get('Price').value &&ProductForm.get('Price').touched"></span>  
+                  </div>
+                  <div *ngIf="ProductForm.Price.invalid && ProductForm.Price.touched">
+                    <small class="text-danger" *ngIf="ProductForm.Price.errors.required">Price is required</small>
+                  </div>
+            </div>   
+            <div class="form-group col-md-8"> 
+              <label for="Quantity" class="mb-0">Quantity  </label>    
+                    <input type="number" formControlName="Quantity"  placeholder="Enter Quantity" class="form-control" [ngClass]="{ 'is-invalid': dataSaved &&ProductForm.Quantity.errors }">  
+                
+                  <div>  
+                    <span *ngIf="!ProductForm.get('Quantity').value &&ProductForm.get('Quantity').touched"></span>  
+                  </div>
+                  <div *ngIf="ProductForm.Quantity.invalid && ProductForm.Quantity.touched">
+                    <small class="text-danger" *ngIf="ProductForm.Quantity.errors.required">Quantity is required</small>
+                  </div>
+            </div>       
+            <div class="form-group col-md-8"> 
+              <label for="Description" class="mb-0">Description</label>    
+                    <input type="text" formControlName="Description"  placeholder="Description" class="form-control" [ngClass]="{ 'is-invalid': dataSaved &&ProductForm.Desciption.errors }">  
+                  <div>  
+                    <span *ngIf="!ProductForm.get('Description').value &&ProductForm.get('Description').touched"></span>  
+                  </div>  
+                </div> 
+              <div class="form-group col-md-8"> 
+                  <label for="Image" class="mb-0">Image</label> 
+                    <input formControlName="Image" placeholder="Image" class="form-control" [ngClass]="{ 'is-invalid': dataSaved &&ProductForm.Image.errors }">                
+                  <div>  
+                    <span *ngIf="!ProductForm.get('Image').value &&ProductForm.get('Image').touched"></span>  
+                  </div> 
+                  <div *ngIf="ProductForm.Image.invalid && ProductForm.Image.touched">
+                    <small class="text-danger" *ngIf="ProductForm.Image.errors.required">Image is required</small>
+                  </div> 
+            </div> 
+           <!--- <div class="form-group col-md-8"> 
+              <label for="CategoryID" class="mb-0">CategoryID</label> 
+                  <select class="custom-select" formControlName="CategoryID" [ngClass]="{ 'is-invalid': dataSaved &&ProductForm.CategoryID.errors }">
+                      <option *ngFor="let item of allCategory">{{item.CategoryName}}
+                      </option>
+                  </select>-->
+                  <!--<small  class="text-danger" [class.d-none]="topic.untouched ||topic.valid">CategoryID is required</small>-->
+                  <!--<div *ngIf="ProductForm.CategoryID.invalid && ProductForm.CategoryID.touched">
+                    <small class="text-danger" *ngIf="ProductForm.CategoryID.errors.required">CategoryID is required</small>
+                  </div> 
+              </div>  -->
+              <div class="form-group col-md-8"> 
+                    <input formControlName="CategoryID"   placeholder="CategoryID" class="form-control">  
+                   
+                  <div>  
+                    <span *ngIf="!ProductForm.get('CategoryID').value &&ProductForm.get('CategoryID').touched"></span>  
+                  </div>
+                </div> 
+                <div class="form-group col-md-8"> 
+                  <button type="submit"  [disabled]="!ProductForm.valid" class="form-control" class="btn hvr-hover">Submit</button>  
+                </div>   
+                <div class="form-group col-md-8">  
+                  <button type="reset"  (click)="resetForm()" class="form-control" class="btn hvr-hover">Reset</button>  
+                </div>
+                  <p *ngIf="dataSaved" style="color:rgb(0, 128, 0);font-size:20px;font-weight:bold" Class="success" align="left">  
+                    {{massage}}  
+                  </p>  
+                </div>
+        </form> 
+        </div> 
+      </div> 
+    </div>    
+<!--<div class="cart-box-main">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12" >
+              <div class="table-main table-responsive">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th>ID</th>
+                              <th>Product Name</th>
+                              <th>Price</th>
+                              <th>Quantity</th>
+                              <th>Image</th>
+                              <th>Desciption</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let item of allProduct">
+                            <td class="thumbnail-img">
+                             <a href="#">
+                             <img class="img-fluid" src="assets/{{item.Image}}" alt="" />
+                            </a>
+                          </td>
+                          <td class="id-pr">
+                            <a href="#">
+                           {{item.Id}}
+                           </a>
+                         </td>
+                          <td class="name-pr">
+                              <a href="#">
+                             {{item.Name}}
+                             </a>
+                          </td>
+                          <td class="price-pr">
+                              <p>${{item.Price}}</p>
+                          </td>
+                          <td class="quantity-pr">
+                            <p>${{item.Quantity}}</p>
+                        </td>
+                          <td class="image-pr">
+                            <img src="assets/{{item.Image}}">
+                          </td>
+                         
+                            <td >  
+                              <button type="button" class="btn btn-info" (click)="loadProductToEdit(item.Id)">Edit</button>  
+                             </td> 
+                             <td >  
+                               <button type="button" class="btn btn-danger" (click)="deleteProduct(item.Id)">Delete</button>  
+                             </td> 
+                          
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+<table class="table" >  
+<tr ngclass="btn-primary"> 
+  <th class="tbl2">Id</th>   
+  <th class="tbl2"> Name</th> 
+  <th class="tbl2">Price</th> 
+  <th class="tbl2">Quantity</th> 
+  <th class="tbl2">Desciption</th>  
+  <th class="tbl2">Image</th>
+  <th class="tbl2">CategoryID</th>
+</tr>  
+<tr *ngFor="let item of allProduct">  
+  <td class="tbl2">{{item.Id }}</td>  
+  <td class="tbl2">{{item.Name}}</td>  
+  <td class="tbl2">{{item.Price}}</td>  
+  <td class="tbl2">{{item.Quantity}}</td>  
+  <td class="tbl2">{{item.Description}}</td>  
+  <td class="tbl2"> <img src="assets/{{item.Image}}"></td>
+  <td class="tbl2">{{item.CategoryID}}</td>  
+ <td class="tbl2">  
+   <button type="button" class="btn btn-info" (click)="loadProductToEdit(item.Id)">Edit</button>  
+  </td> 
+  <td class="tbl2">  
+    <button type="button" class="btn btn-danger" (click)="deleteProduct(item.Id)">Delete</button>  
+  </td> 
+</tr>  
+</table> 
+
+
